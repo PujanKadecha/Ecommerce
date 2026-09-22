@@ -53,7 +53,10 @@ jobs:
           PORT: 5001
           REDIS_HOST: localhost
           REDIS_PORT: 6379
-          JWT_SECRET: ci_test_secret_key_12345
+          JWT_ACCESS_SECRET: ci_test_access_secret_12345
+          JWT_ACCESS_EXPIRES: 15m
+          JWT_REFRESH_SECRET: ci_refresh_secret
+          JWT_REFRESH_EXPIRES: 7d
         run: npm test --if-present
 
   frontend-build:
