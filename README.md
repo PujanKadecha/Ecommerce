@@ -36,6 +36,14 @@ A full-stack E-Commerce web application built with **React + Vite** on the front
 
 ---
 
+###  Admin Page
+![Admin Page](./screenshots//07_admin.png)
+
+---
+
+### Seller Page
+![Seller Page](./screenshots//08_seller.png)
+
 ## 🚀 Features
 
 ### 🧑‍💻 User Features
