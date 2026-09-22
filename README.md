@@ -298,4 +298,5 @@ This project is licensed under the **ISC License**.
 
 ---
 
-<p align="center">Made with ❤️ by Pujan</p>
+![CI Status](https://github.com/PujanKadecha/Ecommerce/actions/workflows/ci.yml/badge.svg)
+
