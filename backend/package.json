@@ -44,7 +44,15 @@
   },
   "jest": {
     "setupFiles": [
-      "dotenv/config"
+      "dotenv/config",
+      "<rootDir>/jest.setup.env.js"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/__tests__/setup.js"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/__tests__/setup.js"
     ]
   }
 }

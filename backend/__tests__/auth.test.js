@@ -1,26 +1,16 @@
 const request = require("supertest");
-const mongoose = require("mongoose");
 const app = require("../app");
 const User = require("../models/user.model");
 
-// ─── Test DB Setup ────────────────────────────────────────────────────────────
-
-beforeAll(async () => {
-  const testDbUrl =
-    process.env.MONGO_URI_TEST || "mongodb://localhost:27017/ecommerce_test";
-  await mongoose.connect(testDbUrl);
-});
-
+// ─── Data Cleanup ─────────────────────────────────────────────────────────────
+// DB connection is managed globally by __tests__/setup.js (MongoMemoryServer).
+// We only need to wipe data between tests for full isolation.
 beforeEach(async () => {
   await User.deleteMany({});
 });
 
-afterAll(async () => {
-  await User.deleteMany({});
-  await mongoose.connection.close();
-});
-
 // ─── Fixtures ─────────────────────────────────────────────────────────────────
+
 
 const validUser = {
   firstName: "Test",
