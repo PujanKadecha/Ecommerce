@@ -2,15 +2,9 @@ const request = require("supertest");
 const app = require("../app");
 const User = require("../models/user.model");
 
-// ─── Data Cleanup ─────────────────────────────────────────────────────────────
-// DB connection is managed globally by __tests__/setup.js (MongoMemoryServer).
-// We only need to wipe data between tests for full isolation.
 beforeEach(async () => {
   await User.deleteMany({});
 });
-
-// ─── Fixtures ─────────────────────────────────────────────────────────────────
-
 
 const validUser = {
   firstName: "Test",
@@ -41,13 +35,13 @@ describe("POST /api/v1/auth/register", () => {
     expect(res.statusCode).toBe(201);
     expect(res.body.success).toBe(true);
     expect(res.body.data.email).toBe(validUser.email);
-    expect(res.body.data).not.toHaveProperty("password"); // security check
-    expect(res.body.data.role).toBe("customer"); // default role
+    expect(res.body.data).not.toHaveProperty("password"); 
+    expect(res.body.data.role).toBe("customer"); 
   });
 
   it("should return 409 for a duplicate email", async () => {
     await registerUser();
-    const res = await registerUser(); // second attempt
+    const res = await registerUser(); 
 
     expect(res.statusCode).toBe(409);
     expect(res.body.success).toBe(false);
@@ -76,7 +70,7 @@ describe("POST /api/v1/auth/login", () => {
     expect(res.statusCode).toBe(200);
     expect(res.body.data).toHaveProperty("accessToken");
     expect(res.body.data).toHaveProperty("refreshToken");
-    expect(res.body.data.user).not.toHaveProperty("password"); // security check
+    expect(res.body.data.user).not.toHaveProperty("password"); 
   });
 
   it("should return 401 for wrong credentials", async () => {
