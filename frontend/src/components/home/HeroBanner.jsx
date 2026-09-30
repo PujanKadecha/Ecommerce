@@ -79,7 +79,7 @@ function HeroBanner() {
 
             <Button
               component={Link}
-              to="/products"
+              to="/categories"
               variant="outlined"
               size="large"
               sx={{
