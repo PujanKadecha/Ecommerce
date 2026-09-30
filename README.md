@@ -298,5 +298,20 @@ This project is licensed under the **ISC License**.
 
 ---
 
+## Docker Setup & Deployment
+
+Both backend and frontend services are containerized and published on Docker Hub:
+- **Backend API:** [`70madmax07/ecommerce-api:latest`](https://hub.docker.com/r/70madmax07/ecommerce-api)
+- **Frontend UI:** [`70madmax07/ecommerce-frontend:latest`](https://hub.docker.com/r/70madmax07/ecommerce-frontend)
+
+### Run with Docker Compose
+
+1. Ensure [Docker Desktop](https://www.docker.com/products/docker-desktop/) is running.
+2. Launch the full stack (API, Frontend, and Redis):
+   ```bash
+   docker compose up -d
+
+---
+
 ![CI Status](https://github.com/PujanKadecha/Ecommerce/actions/workflows/ci.yml/badge.svg)
 
