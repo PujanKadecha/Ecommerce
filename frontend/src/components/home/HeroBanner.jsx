@@ -1,4 +1,4 @@
-import { Box, Button, Container, Typography } from "@mui/material";
+import { Box, Button, Container, Typography, Stack } from "@mui/material";
 import { ArrowForward } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 
@@ -7,89 +7,103 @@ function HeroBanner() {
     <Box
       sx={{
         position: "relative",
-        minHeight: { xs: "75vh", md: "85vh" },
+        minHeight: { xs: "80vh", md: "88vh" },
         display: "flex",
         alignItems: "center",
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.65)), url('https://images.unsplash.com/photo-1498049860654-af1a5c566876?q=80&w=1920&auto=format&fit=crop')`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        color: "#ffffff",
+        backgroundColor: "#ffffff",
+        color: "#111111",
         mb: { xs: 8, md: 12 },
       }}
     >
-      <Container
-        maxWidth="xl"
-        sx={{
-          px: { xs: 3, md: 8 },
-          py: { xs: 8, md: 12 },
-        }}
-      >
-        <Box sx={{ maxWidth: 680 }}>
-          <Typography
-            variant="caption"
-            sx={{
-              display: "block",
-              fontWeight: 700,
-              letterSpacing: "0.25em",
-              textTransform: "uppercase",
-              mb: 2,
-              color: "#38bdf8",
-              fontSize: { xs: "0.75rem", md: "0.85rem" },
-            }}
-          >
-            Premium Tech & Electronics 2026
-          </Typography>
+      <Container maxWidth="xl" sx={{ px: { xs: 3, md: 8 }, py: { xs: 8, md: 12 } }}>
+        <Box sx={{ maxWidth: 660 }}>
 
+          {/* Eyebrow — matches FeaturedProducts / CategoriesSection style */}
+          {/* Main headline — matches h1 theme config */}
           <Typography
             variant="h1"
             sx={{
-              fontSize: { xs: "2.5rem", sm: "3.5rem", md: "4.5rem" },
+              fontSize: { xs: "2.8rem", sm: "3.8rem", md: "5.2rem" },
               fontWeight: 800,
-              lineHeight: 1.05,
+              lineHeight: 1.0,
               letterSpacing: "-0.03em",
               textTransform: "uppercase",
               mb: 3,
+              color: "#111111",
             }}
           >
-            Next-Gen Tech & Electronics for Your Everyday.
+            Shop What
+            <br />
+            You Love.
           </Typography>
 
+          {/* Subtext */}
           <Typography
             variant="body1"
             sx={{
-              fontSize: { xs: "1rem", md: "1.15rem" },
-              color: "rgba(255, 255, 255, 0.85)",
-              lineHeight: 1.6,
-              mb: 4,
-              maxWidth: 540,
+              fontSize: { xs: "1rem", md: "1.1rem" },
+              color: "#666666",
+              lineHeight: 1.7,
+              mb: 5,
+              maxWidth: 500,
               fontWeight: 300,
             }}
           >
-            Discover state-of-the-art gadgets, high-performance audio, premium computing accessories, and smart devices built for seamless modern living.
+            Browse products across fashion, electronics,
+            home, and more — all in one place.
           </Typography>
 
-          <Button
-            component={Link}
-            to="/products"
-            variant="contained"
-            size="large"
-            endIcon={<ArrowForward />}
-            sx={{
-              backgroundColor: "#ffffff",
-              color: "#000000",
-              px: 4,
-              py: 1.75,
-              fontSize: "0.85rem",
-              fontWeight: 700,
-              letterSpacing: "0.1em",
-              "&:hover": {
-                backgroundColor: "#e5e5e5",
+          {/* CTAs — matches theme button styles exactly */}
+          <Stack direction={{ xs: "column", sm: "row" }} spacing={2}>
+            <Button
+              component={Link}
+              to="/products"
+              variant="contained"
+              size="large"
+              endIcon={<ArrowForward />}
+              sx={{
+                backgroundColor: "#000000",
+                color: "#ffffff",
+                px: 4,
+                py: 1.75,
+                fontSize: "0.82rem",
+                fontWeight: 700,
+                letterSpacing: "0.1em",
+                "&:hover": {
+                  backgroundColor: "#222222",
+                  color: "#ffffff",
+                },
+              }}
+            >
+              Shop Now
+            </Button>
+
+            <Button
+              component={Link}
+              to="/products"
+              variant="outlined"
+              size="large"
+              sx={{
+                borderColor: "#000000",
+                borderWidth: "1.5px",
                 color: "#000000",
-              },
-            }}
-          >
-            Explore Tech Products
-          </Button>
+                px: 4,
+                py: 1.75,
+                fontSize: "0.82rem",
+                fontWeight: 700,
+                letterSpacing: "0.1em",
+                "&:hover": {
+                  borderColor: "#000000",
+                  borderWidth: "1.5px",
+                  backgroundColor: "#000000",
+                  color: "#ffffff",
+                },
+              }}
+            >
+              Browse Categories
+            </Button>
+          </Stack>
+
         </Box>
       </Container>
     </Box>
