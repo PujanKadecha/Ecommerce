@@ -292,12 +292,6 @@ Tests are powered by **Jest** and **Supertest**.
 
 ---
 
-## 📄 License
-
-This project is licensed under the **ISC License**.
-
----
-
 ## Docker Setup & Deployment
 
 Both backend and frontend services are containerized and published on Docker Hub:
@@ -315,3 +309,8 @@ Both backend and frontend services are containerized and published on Docker Hub
 
 ![CI Status](https://github.com/PujanKadecha/Ecommerce/actions/workflows/ci.yml/badge.svg)
 
+---
+
+## 📄 License
+
+This project is licensed under the **ISC License**.
