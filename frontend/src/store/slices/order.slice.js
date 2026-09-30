@@ -14,10 +14,10 @@ export const createOrder = createAsyncThunk(
       return res.data?.data;
     } catch (err) {
       return thunkAPI.rejectWithValue(
-        err.response?.data?.message || "Failed to place order"
+        err.response?.data?.message || "Failed to place order",
       );
     }
-  }
+  },
 );
 
 export const fetchOrders = createAsyncThunk(
@@ -28,10 +28,10 @@ export const fetchOrders = createAsyncThunk(
       return res.data?.data || [];
     } catch (err) {
       return thunkAPI.rejectWithValue(
-        err.response?.data?.message || "Failed to fetch orders"
+        err.response?.data?.message || "Failed to fetch orders",
       );
     }
-  }
+  },
 );
 
 export const fetchOrderDetails = createAsyncThunk(
@@ -42,10 +42,10 @@ export const fetchOrderDetails = createAsyncThunk(
       return res.data?.data;
     } catch (err) {
       return thunkAPI.rejectWithValue(
-        err.response?.data?.message || "Failed to fetch order details"
+        err.response?.data?.message || "Failed to fetch order details",
       );
     }
-  }
+  },
 );
 
 export const cancelUserOrder = createAsyncThunk(
@@ -56,10 +56,10 @@ export const cancelUserOrder = createAsyncThunk(
       return res.data?.data;
     } catch (err) {
       return thunkAPI.rejectWithValue(
-        err.response?.data?.message || "Failed to cancel order"
+        err.response?.data?.message || "Failed to cancel order",
       );
     }
-  }
+  },
 );
 
 const orderSlice = createSlice({

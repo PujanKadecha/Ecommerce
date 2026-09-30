@@ -15,11 +15,11 @@ function HeroBanner() {
         mb: { xs: 8, md: 12 },
       }}
     >
-      <Container maxWidth="xl" sx={{ px: { xs: 3, md: 8 }, py: { xs: 8, md: 12 } }}>
+      <Container
+        maxWidth="xl"
+        sx={{ px: { xs: 3, md: 8 }, py: { xs: 8, md: 12 } }}
+      >
         <Box sx={{ maxWidth: 660 }}>
-
-          {/* Eyebrow — matches FeaturedProducts / CategoriesSection style */}
-          {/* Main headline — matches h1 theme config */}
           <Typography
             variant="h1"
             sx={{
@@ -49,11 +49,10 @@ function HeroBanner() {
               fontWeight: 300,
             }}
           >
-            Browse products across fashion, electronics,
-            home, and more — all in one place.
+            Browse products across fashion, electronics, home, and more — all in
+            one place.
           </Typography>
 
-          {/* CTAs — matches theme button styles exactly */}
           <Stack direction={{ xs: "column", sm: "row" }} spacing={2}>
             <Button
               component={Link}
@@ -103,7 +102,6 @@ function HeroBanner() {
               Browse Categories
             </Button>
           </Stack>
-
         </Box>
       </Container>
     </Box>
