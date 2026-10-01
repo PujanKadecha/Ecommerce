@@ -2,9 +2,7 @@ version: "3.8"
 
 services:
   frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
+    image : 70madmax07/ecommerce-frontend
     container_name: ecommerce-frontend
     restart: unless-stopped
     ports:
@@ -15,9 +13,7 @@ services:
       - ecommerce-network
 
   ecommerce-api:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
+    image: 70madmax07/ecommerce-api
     container_name: ecommerce-api
     restart: unless-stopped
     ports:
