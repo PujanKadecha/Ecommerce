@@ -2,7 +2,6 @@ const User = require("../models/user.model");
 const Product = require("../models/product.model");
 const Category = require("../models/category.model");
 const Order = require("../models/order.model");
-const { deleteImage } = require("../utils/cloudinary");
 
 const getAllUsers = async (query) => {
   const page = Number(query.page) || 1;
@@ -110,9 +109,7 @@ const deleteUser = async (adminId, userId) => {
     throw error;
   }
 
-  if (user.avatar?.publicId) {
-    await deleteImage(user.avatar.publicId);
-  }
+
   await User.findByIdAndDelete(userId);
   return;
 };

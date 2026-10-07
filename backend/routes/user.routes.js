@@ -7,7 +7,7 @@ const {
   updateProfileSchema,
   changePasswordSchema,
 } = require("../validators/user.validator");
-const {upload} = require("../middleware/upload.middleware");
+
 const authorize = require("../middleware/authorize.middleware");
 
 router.get("/me", authenticate, userController.getCurrentUser);
@@ -26,12 +26,6 @@ router.patch(
   userController.changePassword,
 );
 
-router.post(
-  "/avatar",
-  authenticate,
-  upload.single("avatar"),
-  userController.uploadAvatar,
-);
 
 router.delete("/me", authenticate, userController.deleteAccount);
 

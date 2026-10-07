@@ -69,7 +69,7 @@ const getProductReviews = async (productId) => {
   return await Review.find({
     product: productId,
   })
-    .populate("user", "firstName lastName avatar")
+    .populate("user", "firstName lastName")
     .sort({
       createdAt: -1,
     });

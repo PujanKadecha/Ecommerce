@@ -32,24 +32,7 @@ const userSchema = new mongoose.Schema(
       enum: ["customer", "seller", "admin"],
       default: "customer",
     },
-    isEmailVerified: {
-      type: Boolean,
-      default: false,
-    },
-    avatar: {
-      url: {
-        type: String,
-        default: "",
-      },
-      publicId: {
-        type: String,
-        default: "",
-      },
-    },
-    phone: {
-      type: String,
-      default: "",
-    },
+
     refreshTokens: [
       {
         token: String,
