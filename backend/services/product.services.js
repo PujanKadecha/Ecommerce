@@ -32,71 +32,13 @@ const createProduct = async (productData, userId) => {
   return product;
 };
 
-const getAllProducts = async (query) => {
-  const page = Number(query.page) || 1;
-  const limit = Number(query.limit) || 10;
-  const skip = (page - 1) * limit;
-  const sortField = query.sort || "createdAt";
-  const sortOrder = query.order === "asc" ? 1 : -1;
-
-  const filter = {
-    status: "active",
-  };
-
-  if (query.category) {
-    filter.category = query.category;
-  }
-
-  if (query.brand) {
-    filter.brand = query.brand;
-  }
-
-  if (query.featured !== undefined) {
-    filter.featured = query.featured === "true";
-  }
-
-  if (query.search) {
-    filter.$or = [
-      {
-        name: {
-          $regex: query.search,
-          $options: "i",
-        },
-      },
-      {
-        description: {
-          $regex: query.search,
-          $options: "i",
-        },
-      },
-      {
-        brand: {
-          $regex: query.search,
-          $options: "i",
-        },
-      },
-    ];
-  }
-
-  const products = await Product.find(filter)
+const getAllProducts = async () => {
+  const products = await Product.find({ status: "active" })
     .populate("category", "name slug")
-    .populate("createdBy", "firstname lastname email")
-    .sort({
-      [sortField]: sortOrder,
-    })
-    .skip(skip)
-    .limit(limit);
-
-  const totalProducts = await Product.countDocuments(filter);
+    .populate("createdBy", "firstname lastname email");
 
   return {
     products,
-    pagination: {
-      totalProducts,
-      currentPage: page,
-      totalPages: Math.ceil(totalProducts / limit),
-      limit,
-    },
   };
 };
 

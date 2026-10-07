@@ -48,19 +48,24 @@ A full-stack E-Commerce web application built with **React + Vite** on the front
 
 ### 🧑‍💻 User Features
 - **Authentication** – Register, Login, Logout with JWT (stored in HttpOnly cookies)
-- **Product Browsing** – Browse products with filters, sorting, and pagination
+- **Product Browsing** – Browse products
 - **Category Navigation** – Explore products by categories
 - **Shopping Cart** – Add, remove, and update product quantities
-- **Wishlist** – Save favourite products
 - **Product Reviews** – Leave star ratings and written reviews
-- **Checkout & Payment** – Secure checkout
+- **Checkout & Payment** – Cash on Delivery (COD) checkout
 - **Order Management** – View order history and track order status
 - **User Profile** – Update personal info and manage addresses
 - **Session Management** – Auto-logout on session expiry
 
+### 🏪 Seller Features
+- **Dashboard** – View store statistics and analytics
+- **Product Management** – Add, edit, and delete own products
+- **Order Tracking** – Monitor and manage customer orders for their products
+
 ### 🔧 Admin Features
-- Manage products, categories, and orders via admin routes
-- View and update order statuses
+- **Global Management** – Manage all users, products, categories, and orders
+- **Role Management** – Promote users to sellers or admins, or delete accounts
+- **Platform Analytics** – View overall platform statistics and growth metrics
 
 ### ⚙️ Technical Features
 - **Rate Limiting** – Global API rate limiter to prevent abuse

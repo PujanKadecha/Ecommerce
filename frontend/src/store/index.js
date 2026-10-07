@@ -16,7 +16,6 @@ import userReducer from "./slices/user.slice";
 import productReducer from "./slices/product.slice";
 import categoryReducer from "./slices/category.slice";
 import cartReducer from "./slices/cart.slice";
-import wishlistReducer from "./slices/wishlist.slice";
 import orderReducer from "./slices/order.slice";
 import addressReducer from "./slices/address.slice";
 import reviewReducer from "./slices/review.slice";
@@ -59,7 +58,7 @@ const store = configureStore({
     product: productReducer,
     category: categoryReducer,
     cart: persistReducer(cartPersistConfig, cartReducer),
-    wishlist: wishlistReducer,
+
     order: orderReducer,
     address: addressReducer,
     review: reviewReducer,

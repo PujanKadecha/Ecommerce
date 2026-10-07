@@ -19,13 +19,12 @@ const createProduct = async (req, res, next) => {
 
 const getAllProducts = async (req, res, next) => {
   try {
-    const result = await productServices.getAllProducts(req.query);
+    const result = await productServices.getAllProducts();
 
     const responsePayload = {
       success: true,
       message: "Product Fetched Successfully",
       data: result.products,
-      pagination: result.pagination,
     };
 
     const cacheKey = `product:${req.orignalUrl || "all"}`;
