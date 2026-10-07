@@ -3,7 +3,7 @@ const Joi = require("joi");
 const placeOrderSchema = Joi.object({
   addressId: Joi.string().hex().length(24).required(),
 
-  paymentMethod: Joi.string().valid("cod", "razorpay", "stripe").default("cod"),
+  paymentMethod: Joi.string().valid("cod").default("cod"),
 });
 
 const orderIdSchema = Joi.object({

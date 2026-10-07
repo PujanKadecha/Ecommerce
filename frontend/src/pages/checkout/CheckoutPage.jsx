@@ -30,7 +30,7 @@ function CheckoutPage() {
 
   const [address, setAddress] = useState({
     fullName: user ? `${user.firstName || ""} ${user.lastName || ""}`.trim() || "Customer Name" : "Customer Name",
-    phone: user?.phone || "9876543210",
+    phone: "",
     street: "",
     city: "",
     state: "",
@@ -88,7 +88,7 @@ function CheckoutPage() {
       }
 
       
-      const mappedPayment = paymentMethod === "COD" ? "cod" : "stripe";
+      const mappedPayment = "cod";
 
       
       const result = await dispatch(createOrder({ addressId, paymentMethod: mappedPayment }));

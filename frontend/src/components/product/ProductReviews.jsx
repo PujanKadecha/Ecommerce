@@ -156,7 +156,6 @@ function ProductReviews({ productId }) {
             <Box key={review._id}>
               <Stack direction="row" spacing={2} alignItems="flex-start">
                 <Avatar
-                  src={review.user?.avatar?.url}
                   sx={{ width: 48, height: 48, bgcolor: "#eee", color: "#666" }}
                 >
                   {review.user?.firstName?.[0]}

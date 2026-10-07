@@ -1,6 +1,6 @@
-﻿# 🛒 E-Commerce Platform
+# 🛒 E-Commerce Platform
 
-A full-stack E-Commerce web application built with **React + Vite** on the frontend and **Node.js + Express** on the backend. It features product browsing, category filtering, a shopping cart, wishlist, user authentication, order management, payment processing via **Stripe**, image uploads via **Cloudinary**, caching via **Redis**, and email notifications via **Brevo**.
+A full-stack E-Commerce web application built with **React + Vite** on the frontend and **Node.js + Express** on the backend. It features product browsing, category filtering, a shopping cart, wishlist, user authentication, order management, image uploads via **Cloudinary**, and caching via **Redis**.
 
 ---
 
@@ -53,7 +53,7 @@ A full-stack E-Commerce web application built with **React + Vite** on the front
 - **Shopping Cart** – Add, remove, and update product quantities
 - **Wishlist** – Save favourite products
 - **Product Reviews** – Leave star ratings and written reviews
-- **Checkout & Payment** – Secure checkout powered by **Stripe**
+- **Checkout & Payment** – Secure checkout
 - **Order Management** – View order history and track order status
 - **User Profile** – Update personal info and manage addresses
 - **Session Management** – Auto-logout on session expiry
@@ -66,7 +66,6 @@ A full-stack E-Commerce web application built with **React + Vite** on the front
 - **Rate Limiting** – Global API rate limiter to prevent abuse
 - **Caching** – Redis-powered caching for fast data retrieval
 - **Image Uploads** – Cloudinary integration for product images
-- **Email Notifications** – Transactional emails via Brevo (Sendinblue)
 - **Security** – Helmet, CORS, bcrypt password hashing
 - **Compression** – Response compression for better performance
 - **Logging** – Morgan HTTP request logger
@@ -98,9 +97,7 @@ A full-stack E-Commerce web application built with **React + Vite** on the front
 | [Express 5](https://expressjs.com/) | Web Framework |
 | [MongoDB + Mongoose](https://mongoosejs.com/) | Database & ODM |
 | [Redis (ioredis)](https://github.com/redis/ioredis) | Caching Layer |
-| [Stripe](https://stripe.com/) | Payment Processing |
 | [Cloudinary](https://cloudinary.com/) | Image Storage & CDN |
-| [Brevo](https://www.brevo.com/) | Email Service |
 | [JWT](https://jwt.io/) | Authentication Tokens |
 | [bcrypt](https://github.com/kelektiv/node.bcrypt.js) | Password Hashing |
 | [Joi](https://joi.dev/) | Input Validation |
@@ -178,7 +175,6 @@ E-Commerce/
 | `GET/POST` | `/api/v1/cart` | Get or update cart |
 | `GET/POST` | `/api/v1/wishlist` | Get or update wishlist |
 | `GET/POST` | `/api/v1/orders` | Get or place orders |
-| `POST` | `/api/v1/payment/create-session` | Create Stripe payment session |
 | `POST` | `/api/v1/reviews` | Post a product review |
 | `GET/POST` | `/api/v1/address` | Manage user addresses |
 | `GET` | `/api/health` | Health check endpoint |
@@ -191,7 +187,7 @@ E-Commerce/
 - **Node.js** >= 18.x
 - **MongoDB** (local or Atlas)
 - **Redis** (local or cloud)
-- Stripe, Cloudinary, and Brevo accounts
+- Cloudinary account
 
 ### 1. Clone the repository
 
@@ -224,13 +220,7 @@ CLOUDINARY_CLOUD_NAME=your_cloud_name
 CLOUDINARY_API_KEY=your_api_key
 CLOUDINARY_API_SECRET=your_api_secret
 
-# Stripe
-STRIPE_SECRET_KEY=your_stripe_secret_key
-STRIPE_WEBHOOK_SECRET=your_stripe_webhook_secret
 
-# Brevo (Email)
-BREVO_API_KEY=your_brevo_api_key
-BREVO_SENDER_EMAIL=your_sender_email
 ```
 
 Start the backend server:
